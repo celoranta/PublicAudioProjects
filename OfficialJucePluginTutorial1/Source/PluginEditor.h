@@ -14,12 +14,11 @@
 //==============================================================================
 /**
 */
-class Audio_Programmer_Tutorial_01AudioProcessorEditor  : public juce::AudioProcessorEditor,
-                                                            private juce::Slider::Listener
+class OfficialJucePluginTutorial1AudioProcessorEditor  : public juce::AudioProcessorEditor, private juce::Slider::Listener
 {
 public:
-    Audio_Programmer_Tutorial_01AudioProcessorEditor (Audio_Programmer_Tutorial_01AudioProcessor&);
-    ~Audio_Programmer_Tutorial_01AudioProcessorEditor() override;
+    OfficialJucePluginTutorial1AudioProcessorEditor (OfficialJucePluginTutorial1AudioProcessor&);
+    ~OfficialJucePluginTutorial1AudioProcessorEditor() override;
 
     //==============================================================================
     void paint (juce::Graphics&) override;
@@ -28,10 +27,9 @@ public:
 private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
-    Audio_Programmer_Tutorial_01AudioProcessor& audioProcessor;
-    
-    juce::Slider midiVolume;
+    OfficialJucePluginTutorial1AudioProcessor& audioProcessor;
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (OfficialJucePluginTutorial1AudioProcessorEditor)
+    juce::Slider midiVelocitySlider;
     void sliderValueChanged(juce::Slider* slider) override;
-    
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Audio_Programmer_Tutorial_01AudioProcessorEditor)
 };

@@ -13,15 +13,15 @@
 //==============================================================================
 /**
 */
-class Audio_Programmer_Tutorial_01AudioProcessor  : public juce::AudioProcessor
+class OfficialJucePluginTutorial1AudioProcessor  : public juce::AudioProcessor
                             #if JucePlugin_Enable_ARA
                              , public juce::AudioProcessorARAExtension
                             #endif
 {
 public:
     //==============================================================================
-    Audio_Programmer_Tutorial_01AudioProcessor();
-    ~Audio_Programmer_Tutorial_01AudioProcessor() override;
+    OfficialJucePluginTutorial1AudioProcessor();
+    ~OfficialJucePluginTutorial1AudioProcessor() override;
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
@@ -55,9 +55,10 @@ public:
     //==============================================================================
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
+    
+    float noteOnVelocity;
 
-    float noteOnVel;
 private:
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Audio_Programmer_Tutorial_01AudioProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (OfficialJucePluginTutorial1AudioProcessor)
 };
