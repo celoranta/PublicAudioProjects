@@ -14,7 +14,7 @@
 //==============================================================================
 /**
 */
-class AP_juce_framework_tutorial_64_audio_pluginAudioProcessorEditor  : public juce::AudioProcessorEditor
+class AP_juce_framework_tutorial_64_audio_pluginAudioProcessorEditor  : public juce::AudioProcessorEditor, private juce::Slider::Listener
 {
 public:
     AP_juce_framework_tutorial_64_audio_pluginAudioProcessorEditor (AP_juce_framework_tutorial_64_audio_pluginAudioProcessor&);
@@ -33,4 +33,5 @@ private:
     juce::Slider mGainSlider;
     int sliderWidth;
     int sliderHeight;
+    void sliderValueChanged(juce::Slider* slider) override;
 };

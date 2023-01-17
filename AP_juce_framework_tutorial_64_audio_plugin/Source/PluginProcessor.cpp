@@ -144,7 +144,7 @@ void AP_juce_framework_tutorial_64_audio_pluginAudioProcessor::processBlock (juc
     {
         auto* channelData = buffer.getWritePointer (channel);
         for (int sample = 0 ; sample < buffer.getNumSamples(); ++sample) {
-            channelData[sample] = channelData[sample] * 0.1;
+            channelData[sample] = channelData[sample] * juce::Decibels::decibelsToGain(mGain);
         }
     }
 }
