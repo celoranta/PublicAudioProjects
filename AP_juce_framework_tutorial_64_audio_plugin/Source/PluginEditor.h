@@ -31,4 +31,6 @@ private:
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AP_juce_framework_tutorial_64_audio_pluginAudioProcessorEditor)
     juce::Slider mGainSlider;
+    int sliderWidth;
+    int sliderHeight;
 };

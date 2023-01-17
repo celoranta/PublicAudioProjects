@@ -15,10 +15,15 @@ AP_juce_framework_tutorial_64_audio_pluginAudioProcessorEditor::AP_juce_framewor
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize (200, 300);
+    sliderWidth = 100;
+    sliderHeight = 150;
+    setSize (200 , 300);
     mGainSlider.setSliderStyle(juce::Slider::SliderStyle::LinearVertical);
     mGainSlider.setRange(0.0f, 1.0f, 0.01f);
-    
+    mGainSlider.setValue(0.67f);
+    addAndMakeVisible(mGainSlider);
+    mGainSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 50, 20);
+     
 }
 
 AP_juce_framework_tutorial_64_audio_pluginAudioProcessorEditor::~AP_juce_framework_tutorial_64_audio_pluginAudioProcessorEditor()
@@ -28,16 +33,12 @@ AP_juce_framework_tutorial_64_audio_pluginAudioProcessorEditor::~AP_juce_framewo
 //==============================================================================
 void AP_juce_framework_tutorial_64_audio_pluginAudioProcessorEditor::paint (juce::Graphics& g)
 {
-    // (Our component is opaque, so we must completely fill the background with a solid colour)
-    g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
-
-    g.setColour (juce::Colours::white);
-    g.setFont (15.0f);
-    g.drawFittedText ("Hello World!", getLocalBounds(), juce::Justification::centred, 1);
+    g.fillAll(juce::Colours::black);
 }
 
 void AP_juce_framework_tutorial_64_audio_pluginAudioProcessorEditor::resized()
 {
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..
+    mGainSlider.setBounds(getWidth()/2 - sliderWidth / 2, getHeight()/2 - sliderHeight / 2, sliderWidth, sliderHeight);
 }

@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="cWMFJ5" name="AP_juce_framework_tutorial_64_audio_plugin"
               projectType="audioplug" useAppConfig="0" addUsingNamespaceToJuceHeader="0"
-              displaySplashScreen="1" jucerFormatVersion="1">
+              displaySplashScreen="1" jucerFormatVersion="1" companyName="ZephyrByXopher">
   <MAINGROUP id="uSjH8P" name="AP_juce_framework_tutorial_64_audio_plugin">
     <GROUP id="{4FACB185-08C9-C00F-617D-AA6274011306}" name="Source">
       <FILE id="bjeSfO" name="PluginProcessor.cpp" compile="1" resource="0"
